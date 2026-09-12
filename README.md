@@ -43,6 +43,9 @@ git clone https://github.com/sueenthear/qianbiwriter.git
 cd qianbiwriter
 ```
 
+> 不想自己构建？到 [Releases](https://github.com/sueenthear/qianbiwriter/releases) 下载签好名的 APK 直接安装。
+> 它是用作者的密钥签的，和你自己构建出来的版本**签名不同，两者不能互相覆盖安装**。
+
 ```powershell
 cd E:\aigames\Android4
 

@@ -17,7 +17,7 @@ release.keystore
 *.jks
 *.keystore
 
-# 构建产物：要给别人装请用 GitHub Releases，不要塞进仓库
+# 构建产物：分发包走 GitHub Releases，不要塞进仓库（会让仓库体积一直累积）
 *.apk
 *.aab
 
