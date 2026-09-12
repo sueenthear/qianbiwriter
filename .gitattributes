@@ -1,0 +1,17 @@
+# 换行符统一：源码一律 LF；Windows 脚本用 CRLF。
+# 这条很重要 —— 否则在 Windows 上 clone 下来的 gradlew（shell 脚本）会变成 CRLF，
+# 在 Linux / macOS 上直接报 "bad interpreter"。
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# 二进制：不要做任何换行转换
+*.jar binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.apk binary
+*.aab binary
+*.keystore binary

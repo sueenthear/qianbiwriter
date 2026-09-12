@@ -1,0 +1,33 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+
+# 本机 SDK 路径（各人环境不同，不要提交）
+local.properties
+
+# 签名密钥：不进版本库。
+# 没有它时 release 会自动回退到 debug 签名（见 app/build.gradle.kts），拉下来直接就能构建。
+release.keystore
+*.jks
+*.keystore
+
+# 构建产物：要给别人装请用 GitHub Releases，不要塞进仓库
+*.apk
+*.aab
+
+# Kotlin 编译缓存 / 临时目录
+.kotlin/
+.preview-tmp/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>浅笔记事 · 电脑协作</title>
+<link rel="stylesheet" href="/web/style.css">
+</head>
+<body>
+
+<!-- 访问码门：手机上进「设置 → Web 协作」能看到这一串 -->
+<section id="gate" class="gate hidden">
+  <div class="gate-card">
+    <h1>浅笔记事</h1>
+    <p id="gate-hint">输入手机上显示的访问码</p>
+    <input id="gate-input" type="text" autocomplete="off" spellcheck="false" placeholder="访问码">
+    <button id="gate-go">进入</button>
+    <p class="gate-note">访问码在手机 App 的「设置 → Web 协作」里，也可以自己改。只在局域网内传输。</p>
+  </div>
+</section>
+
+<div id="app" class="app hidden">
+  <!-- 书架：只列出在手机上开了「Web 共享」的书 -->
+  <aside class="shelf">
+    <div class="shelf-head">
+      <input id="search" type="search" placeholder="书名 / 作者 / 简介　#标签">
+    </div>
+    <ul id="book-list" class="book-list"></ul>
+    <div class="shelf-foot"><span id="conn-state">连接中…</span></div>
+  </aside>
+
+  <!-- 目录 -->
+  <nav class="toc">
+    <div class="toc-head">
+      <span id="toc-title" class="toc-title">目录</span>
+      <span id="toc-count" class="muted"></span>
+    </div>
+    <div class="toc-actions">
+      <button id="btn-new-group" title="在当前位置新建一卷（只能写简介）">＋ 卷</button>
+      <button id="btn-new-chapter" title="在当前位置新建一章（可以写正文）">＋ 章</button>
+    </div>
+    <ul id="tree" class="tree"></ul>
+  </nav>
+
+  <!-- 编辑 -->
+  <main class="editor">
+    <div id="editor-empty" class="empty">从左边挑一本书，再挑一节开始写。</div>
+
+    <div id="editor" class="editor-body hidden">
+      <div id="conflict" class="conflict hidden">
+        <span>这一节在别处被改过了。</span>
+        <button id="conflict-load">载入最新</button>
+        <button id="conflict-force">用我的覆盖</button>
+      </div>
+
+      <div class="editor-head">
+        <input id="node-title" class="title-input" type="text" placeholder="标题">
+        <span id="node-kind" class="kind-tag"></span>
+        <span id="node-chars" class="muted"></span>
+        <span id="save-state" class="save-state">未改动</span>
+      </div>
+
+      <label class="field">
+        <span>简介</span>
+        <textarea id="node-summary" spellcheck="false" placeholder="这一节的简介（卷和章都能写）"></textarea>
+      </label>
+
+      <label class="field grow">
+        <span>正文</span>
+        <textarea id="node-content" spellcheck="false" placeholder="正文…"></textarea>
+      </label>
+
+      <div id="locked-hint" class="locked hidden">
+        「卷 / 目录」只能写简介，不承载正文。要写正文请选一章，或先新建一章。
+      </div>
+    </div>
+  </main>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+<script src="/web/app.js"></script>
+</body>
+</html>
